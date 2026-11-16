@@ -130,6 +130,7 @@ def save_png(image: Image, path: str) -> None:
     with open(path, "wb") as f:
         f.write(b"\x89PNG\r\n\x1a\n")
         f.write(chunk(b"IHDR", ihdr))
+        f.write(chunk(b"IDAT", comp))
         f.write(chunk(b"IEND", b""))
 
 
