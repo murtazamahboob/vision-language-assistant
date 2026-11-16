@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vision-language-assistant"
+version = "1.0.0"
+description = "Multimodal vision-language assistant: ask questions about an image and get answers grounded in its pixels — colours, objects, positions and sizes, with bounding-box evidence. Offline, deterministic, stdlib-only."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{ name = "Murtaza Mahboob" }]
+keywords = [
+    "vision-language",
+    "visual-question-answering",
+    "vqa",
+    "image-analysis",
+    "computer-vision",
+    "png",
+    "python",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0"]
+
+[project.scripts]
+visionqa = "visionqa.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
